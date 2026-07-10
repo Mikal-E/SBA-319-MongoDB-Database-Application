@@ -5,6 +5,7 @@ Organized files based upon types and usage */
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js"
+import teamMemberRoutes from "./routes/teamMembers.js";
 
 dotenv.config();
 connectDB();
@@ -13,6 +14,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+/* Connecting /routes/teamMembers.js */
+
+app.use("/api/teamMembers", teamMemberRoutes);
 
 app.listen(PORT, () => {
 

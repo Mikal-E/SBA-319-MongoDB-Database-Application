@@ -109,7 +109,7 @@ router
 
             }
 
-            res.json({ message: "Team member deleted successfully "});
+            res.json({ message: "Team member deleted successfully"});
             
         } catch (error) {
 
