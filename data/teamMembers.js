@@ -1,9 +1,9 @@
 /* Requirement - Populate your application's collections with sample data illustrating the use case of the collections. You must include at least five sample documents per collection.
-3 of 3 - This one teamMember.js */
-export const teamMember = [
+3 of 3 - This one teamMembers.js */
+export const teamMembers = [
 
     {
-        name: "Susan Welch",
+        name: "Susan Welsch",
         role: "Junior Strategist",
         email: "swelch@brief.io",
         department: "Marketing (Integrated)",
