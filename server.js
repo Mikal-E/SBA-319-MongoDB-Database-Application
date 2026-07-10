@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js"
 import teamMemberRoutes from "./routes/teamMembers.js";
 import briefsRoutes from "./routes/briefs.js"
+import activitiesRoutes from "./routes/activities.js"
 
 dotenv.config();
 connectDB();
@@ -16,13 +17,17 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-/* Connecting /routes/teamMembers.js */
+/* Connecting /routes/activities.js */
 
-app.use("/api/teamMembers", teamMemberRoutes);
+app.use("/api/activities", activitiesRoutes)
 
 /* Connecting /routes/briefs.js */
 
 app.use("/api/briefs", briefsRoutes);
+
+/* Connecting /routes/teamMembers.js */
+
+app.use("/api/teamMembers", teamMemberRoutes);
 
 app.listen(PORT, () => {
 
