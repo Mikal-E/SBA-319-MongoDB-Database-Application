@@ -4,6 +4,8 @@ import TeamMember from "./models/TeamMember.js";
 import Brief from "./models/Brief.js"
 import { teamMembers } from "./data/teamMembers.js";
 import { briefs } from "./data/briefs.js";
+import { activities } from "./data/activities.js";
+import Activity from "./models/Activity.js";
 
 dotenv.config();
 
@@ -14,13 +16,15 @@ const seedDatabase = async () => {
         await mongoose.connect(process.env.MONGO_URI);
         console.log("MongoDB connected for seeding");
 
-        await TeamMember.deleteMany();
-        await Brief.deleteMany();
-        console.log("Old TeamMember and Brief data cleared");
+        // await TeamMember.deleteMany(); - Added in activitie.js data and did not want to rerun this.
+        await Activity.deleteMany();
+        // console.log("Old TeamMember and Brief data cleared");
+        console.log("Old Activity data cleared");
 
-        await TeamMember.insertMany(teamMembers);
-        await Brief.insertMany(briefs);
-        console.log("TeamMembers and Briefs seeded successfully");      
+        // await Brief.deleteMany() - Added in activities.js data and did not want to rerun this.
+        await Activity.insertMany(activities);
+        // console.log("TeamMembers and Briefs seeded successfully");      
+        console.log("Activities seeded successfully");
 
     } catch (error) {
 
