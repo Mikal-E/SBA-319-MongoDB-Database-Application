@@ -8,6 +8,7 @@ import connectDB from "./config/db.js"
 import teamMemberRoutes from "./routes/teamMembers.js";
 import briefsRoutes from "./routes/briefs.js"
 import activitiesRoutes from "./routes/activities.js"
+import analyticsRoute from "./routes/analytics.js";
 
 dotenv.config();
 connectDB();
@@ -20,6 +21,10 @@ app.use(express.json());
 /* Connecting /routes/activities.js */
 
 app.use("/api/activities", activitiesRoutes)
+
+/* Connecting /routes/analytics.js */
+
+app.use("/api/analytics", analyticsRoute);
 
 /* Connecting /routes/briefs.js */
 
