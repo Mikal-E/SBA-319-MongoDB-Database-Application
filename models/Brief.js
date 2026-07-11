@@ -42,6 +42,11 @@ const briefSchema = new mongoose.Schema(
 
 )
 
+/* Requirements - Include sensible indexes for any and all fields that are queried frequently. For fields that may have a high write-to-read ratio, you may forgo indexes for performance considerations. Make comments of this where applicable. Weight 5%
+2 of 3 - This one Briefs.js*/
+
+briefSchema.index({ status: 1 });
+
 const Brief = mongoose.model("Brief", briefSchema);
 
 export default Brief;
