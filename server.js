@@ -9,6 +9,7 @@ import teamMemberRoutes from "./routes/teamMembers.js";
 import briefsRoutes from "./routes/briefs.js"
 import activitiesRoutes from "./routes/activities.js"
 import analyticsRoute from "./routes/analytics.js";
+import logger from "./middleware/logger.js"
 
 dotenv.config();
 connectDB();
@@ -17,6 +18,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+/* Middleware Connection */
+
+app.use(logger);
 
 /* Connecting /routes/activities.js */
 
